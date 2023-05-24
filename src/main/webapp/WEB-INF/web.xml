@@ -123,13 +123,23 @@
 
     <servlet>
         <servlet-name>TimeServlet</servlet-name>
-        <servlet-class>com.example.TimeServlet</servlet-class>
+        <servlet-class>com.goit.servlet.time.TimeServlet</servlet-class>
     </servlet>
+
+    <filter>
+        <filter-name>TimezoneValidateFilter</filter-name>
+        <filter-class>com.goit.servlet.filter.TimezoneValidateFilter</filter-class>
+    </filter>
 
     <servlet-mapping>
         <servlet-name>TimeServlet</servlet-name>
         <url-pattern>/time</url-pattern>
     </servlet-mapping>
+
+    <filter-mapping>
+        <filter-name>TimezoneValidateFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
 
     <session-config>
         <session-timeout>30</session-timeout>
